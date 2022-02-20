@@ -3,12 +3,12 @@ package main
 import (
 	"context"
 	"fmt"
+	"k8s.io/apimachinery/pkg/labels"
 	"path"
 
 	apiv1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/runtime"
 	cacheddiscovery "k8s.io/client-go/discovery/cached"
@@ -90,7 +90,7 @@ func main() {
 	}
 	targetGR := mappings[0].Resource.GroupResource()
 	//获取 scale
-	scale, err := scaleClient.Scales("default").Get(context.TODO(),targetGR,"podinfo", v1.GetOptions{})
+	scale, err := scaleClient.Scales("default").Get(context.TODO(), targetGR, "podinfo", v1.GetOptions{})
 	if err != nil {
 		panic(err)
 	}
@@ -115,10 +115,21 @@ func main() {
 	fmt.Println(selector)
 	fmt.Println(metricSelector)
 
-	metric, timestamp, err := metricsClient.GetRawMetric("http_requests","default",selector,metricSelector)
+
+	metric, timestamp, err := metricsClient.GetRawMetric("http_requests", "default", selector, metricSelector)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(metric)
-	fmt.Println(timestamp)
+	fmt.Println("time", timestamp)
+	for podName, podMetric := range metric {
+		fmt.Println("podName", podName)
+		fmt.Println("podMetric", podMetric.Value)
+	}
+
+	/*d, err := hpaClient.AppsV1().Deployments("default").Get(context.TODO(), "podinfo", metav1.GetOptions{})
+	if err != nil {
+		panic(err)
+	}
+	selector11, err := metav1.LabelSelectorAsSelector(d.Spec.Selector)
+	//metric, timestamp, err := metricsClient.GetResourceMetric(context.TODO(), "memory", "default", selector11, "")*/
 }
