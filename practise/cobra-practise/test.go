@@ -2,8 +2,21 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
 	"log"
 )
+
+const (
+	USER   = "root"
+	PWD    = "123456"
+	DBIP   = "127.0.0.1"
+	DBPORT = "3306"
+	DBNAME = "gorm"
+)
+
+type DB struct {
+	db *gorm.DB
+}
 
 func loginHandler (context *gin.Context) {
 	if context.Request.Method == "GET" {
@@ -16,7 +29,7 @@ func loginHandler (context *gin.Context) {
 		password := context.PostForm("password")
 		// 如果提交多个值, 我们可以使用PostFormArray获取
 		context.String(200, "姓名: %v; 密码: %v;", username, password)
-		context.HTML(200, `index.html`, nil)
+
 	}
 }
 
@@ -29,4 +42,12 @@ func main() {
 	if err := router.Run("localhost:8080"); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func mysql() &gorm.DB {
+	info := USER + ":" + PWD + "@tcp(" + DBIP + ":" + DBPORT + ")/" + DBNAME + "?charset=utf8&parseTime=True&loc=Local&timeout=10ms"
+	db, err := gorm.Open("mysql", info)
+	db.SingularTable(true)
+
+	return db
 }
