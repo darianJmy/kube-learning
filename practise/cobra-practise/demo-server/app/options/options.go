@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"github.com/spf13/pflag"
 	"kube-learning/practise/cobra-practise/demo-server/app/config"
 	"log"
 	"time"
@@ -23,7 +24,6 @@ type User struct {
 
 type Options struct {
 	ComponentConfig *config.Config
-
 	// ConfigFile is the location of the autoscaler's configuration file.
 	ConfigFile string
 
@@ -45,7 +45,7 @@ func (o *Options) registerDatabase() error {
 		sqlConfig.Password,
 		sqlConfig.Host,
 		sqlConfig.Port,
-		sqlConfig.Name)
+		sqlConfig.DBName)
 	DB, err := gorm.Open("mysql", dbConnection)
 	if err != nil {
 		return err
@@ -81,6 +81,7 @@ func (o *Options) Complete() error {
 }
 
 func (o *Options) Run() error {
+
 	router := gin.Default()
 	// 这里很关键, 我们的 login.html 是写在当前目录的 templates 目录中的, 所以必须指定模板所在的目录
 	// templates/* 表示从templates目录中加载模板文件
@@ -109,6 +110,7 @@ func StartDemoServer(ctx context.Context) {
 	}(ctx)
 }
 
+
 func (o *Options) loginHandler (context *gin.Context) {
 	if context.Request.Method == "GET" {
 		// 调用context.HTML 渲染模板
@@ -121,4 +123,8 @@ func (o *Options) loginHandler (context *gin.Context) {
 		user.Age = context.PostForm("password")
 		o.DB.Create(&user)
 	}
+}
+
+func (o *Options) Flags(fs *pflag.FlagSet) *config.MysqlConfig {
+	return config.AddFlags(fs)
 }

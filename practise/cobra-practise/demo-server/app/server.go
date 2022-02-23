@@ -3,12 +3,16 @@ package app
 import (
 	"fmt"
 	"github.com/spf13/cobra"
+	"k8s.io/klog/v2"
 	"kube-learning/practise/cobra-practise/demo-server/app/options"
 	"os"
 )
 
 func NewDemoCommand() *cobra.Command {
 	o, err := options.NewOptions()
+	if err != nil {
+		klog.Fatalf("unable to initialize command options: %v", err)
+	}
 
 	cmd := &cobra.Command{
 		Use:  "demo-server",
@@ -32,9 +36,9 @@ func NewDemoCommand() *cobra.Command {
 			return nil
 		},
 	}
+	fs := cmd.Flags()
+	o.ComponentConfig.Mysql = o.Flags(fs)
+
 
 	return cmd
 }
-
-
-
