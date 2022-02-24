@@ -1,15 +1,14 @@
 package options
 
 import (
-	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/spf13/pflag"
+	cliflag "k8s.io/component-base/cli/flag"
 	"kube-learning/practise/cobra-practise/demo-server/app/config"
 	"log"
-	"time"
 )
 
 const (
@@ -30,34 +29,15 @@ type Options struct {
 	Master string
 
 	DB *gorm.DB
+
+	Fs *pflag.FlagSet
 }
 
 func NewOptions() (*Options, error) {
 	return &Options{
 		Master: "demo-master",
+		ComponentConfig: config.NewComponentConfig(),
 	}, nil
-}
-
-func (o *Options) registerDatabase() error {
-	sqlConfig := o.ComponentConfig.Mysql
-	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
-		sqlConfig.User,
-		sqlConfig.Password,
-		sqlConfig.Host,
-		sqlConfig.Port,
-		sqlConfig.DBName)
-	DB, err := gorm.Open("mysql", dbConnection)
-	if err != nil {
-		return err
-	}
-
-	// set the connect pools
-	DB.SingularTable(true)
-	DB.DB().SetMaxIdleConns(10)
-	DB.DB().SetMaxOpenConns(100)
-	o.DB = DB
-
-	return nil
 }
 
 func (o *Options) Complete() error {
@@ -91,25 +71,8 @@ func (o *Options) Run() error {
 		log.Fatal(err)
 	}
 	// 打印测试
-
 	return nil
 }
-
-func StartDemoServer(ctx context.Context) {
-	go func(ctx context.Context) {
-		t := time.NewTicker(2 * time.Second)
-		for {
-			select {
-			case <-ctx.Done():
-				fmt.Println("接到中断信号，退出!")
-				return
-			case <-t.C:
-				fmt.Println("demo")
-			}
-		}
-	}(ctx)
-}
-
 
 func (o *Options) loginHandler (context *gin.Context) {
 	if context.Request.Method == "GET" {
@@ -125,6 +88,33 @@ func (o *Options) loginHandler (context *gin.Context) {
 	}
 }
 
-func (o *Options) Flags(fs *pflag.FlagSet) *config.MysqlConfig {
-	return config.AddFlags(fs)
+func (o *Options) registerDatabase() error {
+	sqlConfig := o.ComponentConfig.Mysql
+	passwd, _ := o.Fs.GetString("password")
+	if &passwd != nil {
+		sqlConfig.Password = passwd
+	}
+	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
+		sqlConfig.User,
+		sqlConfig.Password,
+		sqlConfig.Host,
+		sqlConfig.Port,
+		sqlConfig.DBName)
+	DB, err := gorm.Open("mysql", dbConnection)
+	if err != nil {
+		return err
+	}
+
+	// set the connect pools
+	DB.SingularTable(true)
+	DB.DB().SetMaxIdleConns(10)
+	DB.DB().SetMaxOpenConns(100)
+	o.DB = DB
+
+	return nil
+}
+
+func (o *Options) Flags() (fss cliflag.NamedFlagSets) {
+	o.ComponentConfig.Mysql.AddFlags(fss.FlagSet("mysql"))
+	return fss
 }
