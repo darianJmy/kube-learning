@@ -66,8 +66,8 @@ func (o *Options) Run() error {
 	// 这里很关键, 我们的 login.html 是写在当前目录的 templates 目录中的, 所以必须指定模板所在的目录
 	// templates/* 表示从templates目录中加载模板文件
 	router.LoadHTMLGlob("index.html")
-	router.Any("/login", o.loginHandler)
-	if err := router.Run("localhost:8080"); err != nil {
+	router.Any(o.ComponentConfig.Http.HttpUrl, o.loginHandler)
+	if err := router.Run("localhost" + ":" + o.ComponentConfig.Http.HttpPort); err != nil {
 		log.Fatal(err)
 	}
 	// 打印测试
@@ -85,16 +85,18 @@ func (o *Options) loginHandler (context *gin.Context) {
 		user.Name = context.PostForm("username")
 		user.Age = context.PostForm("password")
 		o.DB.Create(&user)
+		context.HTML(200, `index.html`, nil)
 	}
 }
 
 func (o *Options) registerDatabase() error {
 	sqlConfig := o.ComponentConfig.Mysql
 	passwd, _ := o.Fs.GetString("password")
-	if &passwd != nil {
+	if passwd != "" {
 		sqlConfig.Password = passwd
 	}
-	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
+	fmt.Println(sqlConfig)
+	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local&timeout=30s",
 		sqlConfig.User,
 		sqlConfig.Password,
 		sqlConfig.Host,
@@ -116,5 +118,6 @@ func (o *Options) registerDatabase() error {
 
 func (o *Options) Flags() (fss cliflag.NamedFlagSets) {
 	o.ComponentConfig.Mysql.AddFlags(fss.FlagSet("mysql"))
+	o.ComponentConfig.Http.AddFlags(fss.FlagSet("http"))
 	return fss
 }

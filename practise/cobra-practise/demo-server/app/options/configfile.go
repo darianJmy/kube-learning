@@ -24,7 +24,6 @@ func loadConfig(data []byte) (*config.Config, error) {
 	if err := yaml.Unmarshal(data, &c); err != nil {
 		return nil, err
 	}
-
 	return &c, nil
 }
 

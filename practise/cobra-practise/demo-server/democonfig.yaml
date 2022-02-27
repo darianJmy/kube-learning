@@ -4,3 +4,7 @@ mysql:
   host: 192.168.245.145
   port: 3306
   name: gorm
+
+http:
+  httpport: 8082
+  httpurl: login
