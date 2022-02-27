@@ -91,7 +91,7 @@ func (o *Options) loginHandler (context *gin.Context) {
 func (o *Options) registerDatabase() error {
 	sqlConfig := o.ComponentConfig.Mysql
 	passwd, _ := o.Fs.GetString("password")
-	if &passwd != nil {
+	if passwd != "" {
 		sqlConfig.Password = passwd
 	}
 	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
