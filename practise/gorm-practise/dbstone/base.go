@@ -3,6 +3,7 @@ package dbstone
 import (
 	"fmt"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"gopkg.in/yaml.v2"
 	"os"
 )
@@ -28,13 +29,12 @@ func init() {
 	if err := yaml.Unmarshal(data, &mysql); err != nil {
 		panic(err)
 	}
-	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local&timeout=30s",
+	dbConnection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local&timeout=30s",
 		mysql.User,
 		mysql.Password,
 		mysql.Host,
 		mysql.Port,
 		mysql.DBName)
-	fmt.Println(DB)
 	DB, err = gorm.Open("mysql", dbConnection)
 	if err != nil {
 		panic(err)
@@ -43,4 +43,5 @@ func init() {
 	DB.DB().SetMaxIdleConns(10)
 	DB.DB().SetMaxOpenConns(100)
 	DB.SingularTable(true)
+	fmt.Println(DB)
 }
