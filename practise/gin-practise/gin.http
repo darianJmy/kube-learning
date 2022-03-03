@@ -1,0 +1,89 @@
+###
+GET http://127.0.0.1:8080/v1/login
+
+###
+POST http://127.0.0.1:8080/v2/postname
+
+{
+    "name": "jixingxing",
+    "passwd": "jmy"
+}
+
+###
+POST http://127.0.0.1:8080/login
+
+{
+    "name": "root",
+    "password": "admin"
+}
+
+###
+POST http://127.0.0.1:8000/loginJSON
+
+{
+    "user": "root2",
+    "password": "admin"
+}
+
+###
+POST http://127.0.0.1:8080/someJSON
+
+{
+    "name": "jixingxing",
+    "password": "admim"
+}
+
+###
+POST http://127.0.0.1:8080/someStruct?name=jixingxing1ss
+
+###
+POST http://127.0.0.1:8080/someXML
+
+{
+    "name": "jixingxing",
+    "password": "admim"
+}
+
+###
+POST http://127.0.0.1:8080/someYAML
+
+{
+    "name": "jixingxing",
+    "password": "admim"
+}
+
+###
+POST http://127.0.0.1:8080/someURI
+
+{
+    "name": "jixingxing",
+    "password": "admim"
+}
+
+###
+GET http://127.0.0.1:8080/long_async
+
+###
+GET http://127.0.0.1:8080/long_sync
+
+###
+GET http://127.0.0.1:8080/ce
+
+###
+GET http://127.0.0.1:8080/request
+
+###
+GET http://127.0.0.1:8080/req
+
+
+###
+GET http://127.0.0.1:8000/cookie
+
+###
+GET http://127.0.0.1:8080/login
+
+###
+GET http://127.0.0.1:8080/home
+
+###
+GET http://127.0.0.1:8000/login
