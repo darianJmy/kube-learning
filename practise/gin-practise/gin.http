@@ -2,11 +2,11 @@
 GET http://127.0.0.1:8080/v1/login
 
 ###
-POST http://127.0.0.1:8080/login
+POST http://127.0.0.1:8080/v2/postname
 
 {
-    "name": "admi11n",
-    "password": 123
+    "name": "jixingxing",
+    "passwd": "jmy"
 }
 
 ###
@@ -90,6 +90,7 @@ GET http://127.0.0.1:8000/login
 
 
 ###
+<<<<<<< HEAD
 GET http://127.0.0.1:8080/ping
 
 ###
@@ -116,3 +117,6 @@ Content-Type: multipart/form-data
 
 < /Users/jimingyu/Desktop/upload.html
 ###
+=======
+GET http://127.0.0.1:8000/login
+>>>>>>> 650af4459e5f23e97f98cbccc8b3b14af224f6e9
