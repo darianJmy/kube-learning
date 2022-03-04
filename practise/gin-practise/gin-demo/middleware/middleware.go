@@ -33,7 +33,7 @@ func AuthServer() gin.HandlerFunc {
 	handlerFunc := func(c *gin.Context) {
 		cookie, err := c.Cookie("abc")
 		if err != nil && cookie != "123" {
-			r.SetCode(200)
+			r.SetCode(400)
 			r.SetMessage("not cookie")
 			r.SetError(err)
 			c.JSON(400, r)

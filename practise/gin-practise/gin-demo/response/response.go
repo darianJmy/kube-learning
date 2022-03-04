@@ -76,3 +76,46 @@ func CookiePractise(c *gin.Context) {
 	r.SetError(nil)
 	c.JSON(200, r)
 }
+
+func AsyncPractise(c *gin.Context) {
+
+	go func() {
+		r := GinResp{}
+
+		r.SetCode(200)
+
+		r.SetMessage("Async Practise Message")
+
+		c.JSON(200, r)
+	} ()
+}
+
+func UploadPractise(c *gin.Context) {
+	r := GinResp{}
+
+	_, file, err := c.Request.FormFile("file")
+	if err != nil {
+		r.SetCode(400)
+		r.SetMessage("upload error")
+		r.SetError(err)
+		c.JSON(400, r)
+		return
+	} else if file.Size > 1024 * 1024 * 2 {
+		r.SetCode(400)
+		r.SetMessage("文件太大了")
+		r.SetError(err)
+		c.JSON(400, r)
+		return
+	} else if file.Header.Get("Content-Type") != "image/png" {
+		r.SetCode(400)
+		r.SetMessage("只允许上传png图片")
+		r.SetError(err)
+		c.JSON(400, r)
+		return
+	}
+	c.SaveUploadedFile( file, file.Filename)
+	r.SetCode(200)
+	r.SetMessage("上传完成")
+	r.SetError(err)
+	c.JSON(200, r)
+}
