@@ -1,0 +1,82 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (4 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 16:23:26 | 200 |      375.08µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 16:23:27 | 200 |      84.366µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 16:23:28 | 200 |      91.886µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 16:29:17 | 200 |      95.137µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 16:53:54 | 200 |      91.749µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 16:58:31 | 200 |     115.167µs |       127.0.0.1 | POST     "/practise/post"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (4 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 17:09:28 | 200 |     341.311µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:09:29 | 200 |     140.589µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:09:39 | 200 |     175.702µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:09:41 | 200 |      130.72µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:09:42 | 200 |      92.475µs |       127.0.0.1 | POST     "/practise/post"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (4 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 17:10:34 | 400 |     457.154µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:10:34 | 400 |       98.53µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:10:35 | 400 |      96.252µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:12:17 | 200 |     121.101µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:12:27 | 400 |     170.425µs |       127.0.0.1 | POST     "/practise/post"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 17:43:06 | 400 |     344.023µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:43:07 | 400 |      83.947µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:43:15 | 400 |     114.415µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:43:22 | 200 |     157.315µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 17:43:38 | 200 |     107.107µs |       127.0.0.1 | GET      "/practise/get"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 17:44:35 | 400 |     250.191µs |       127.0.0.1 | GET      "/practise/get"
+[GIN] 2022/03/04 - 17:44:52 | 200 |      90.215µs |       127.0.0.1 | GET      "/practise/cookie"
+[GIN] 2022/03/04 - 17:44:59 | 200 |      89.563µs |       127.0.0.1 | GET      "/practise/cookie"
+[GIN] 2022/03/04 - 17:45:07 | 200 |     135.518µs |       127.0.0.1 | GET      "/practise/get"
