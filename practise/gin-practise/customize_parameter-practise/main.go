@@ -13,6 +13,7 @@ type User struct {
 	Name 	string 	`json:"name" form:"name" binding:"NotNullAndAdmin"`
 	Address string  `json:"address" form:"address" binding:"required"`
 }
+
 func main() {
 	r := gin.Default()
 

@@ -2,11 +2,11 @@
 GET http://127.0.0.1:8080/v1/login
 
 ###
-POST http://127.0.0.1:8080/v2/postname
+POST http://127.0.0.1:8080/login
 
 {
-    "name": "jixingxing",
-    "passwd": "jmy"
+    "name": "admi11n",
+    "password": 123
 }
 
 ###
@@ -90,4 +90,26 @@ GET http://127.0.0.1:8000/login
 
 
 ###
-GET http://127.0.0.1:8000/login
+GET http://127.0.0.1:8080/ping
+
+###
+GET http://127.0.0.1:8080/practise/cookie
+
+###
+GET http://127.0.0.1:8080/practise/get
+
+###
+GET http://127.0.0.1:8080/practise/async
+###
+
+POST http://localhost:8080/practise/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="WechatIMG40.png"
+Content-Type: image/png
+
+< /Users/jimingyu/Desktop/WechatIMG40.png
+--WebAppBoundary--
+
+###
