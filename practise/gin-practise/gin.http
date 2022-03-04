@@ -91,22 +91,3 @@ GET http://127.0.0.1:8000/login
 
 ###
 GET http://127.0.0.1:8000/login
-
-
-###
-GET http://127.0.0.1:8080/get
-
-###
-POST http://127.0.0.1:8080/practise/post
-
-{
-    "name": "jixingxing",
-    "age": 18
-}
-
-###
-GET http://127.0.0.1:8080/practise/get
-
-###
-GET http://127.0.0.1:8080/practise/cookie
-

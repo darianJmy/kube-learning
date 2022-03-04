@@ -8,5 +8,10 @@
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2022/03/03 - 14:46:48 | 200 |      20.757µs |       127.0.0.1 | GET      "/ping"
-[GIN] 2022/03/03 - 14:46:48 | 200 |      66.351µs |       127.0.0.1 | GET      "/ping"
+[GIN] 2022/03/03 - 21:31:24 | 404 |         626ns |       127.0.0.1 | POST     "/login"
+[GIN] 2022/03/03 - 21:31:24 | 404 |       1.168µs |       127.0.0.1 | POST     "/login"
+[GIN] 2022/03/03 - 21:31:24 | 404 |         716ns |       127.0.0.1 | POST     "/login"
+[GIN] 2022/03/03 - 21:32:01 | 404 |         618ns |       127.0.0.1 | GET      "//ping"
+[GIN] 2022/03/03 - 21:32:01 | 404 |         597ns |       127.0.0.1 | GET      "//ping"
+[GIN] 2022/03/03 - 21:32:10 | 200 |      75.478µs |       127.0.0.1 | GET      "/ping"
+[GIN] 2022/03/03 - 21:33:26 | 404 |         966ns |       127.0.0.1 | POST     "/login"

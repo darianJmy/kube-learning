@@ -4,49 +4,40 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (4 handlers)
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
 [GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2022/03/04 - 16:23:26 | 200 |      375.08µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 16:23:27 | 200 |      84.366µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 16:23:28 | 200 |      91.886µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 16:29:17 | 200 |      95.137µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 16:53:54 | 200 |      91.749µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 16:58:31 | 200 |     115.167µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 22:29:11 | 400 |     588.281µs |       127.0.0.1 | GET      "/practise/get"
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (4 handlers)
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
 [GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2022/03/04 - 17:09:28 | 200 |     341.311µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:09:29 | 200 |     140.589µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:09:39 | 200 |     175.702µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:09:41 | 200 |      130.72µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:09:42 | 200 |      92.475µs |       127.0.0.1 | POST     "/practise/post"
-[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
-
-[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
- - using env:	export GIN_MODE=release
- - using code:	gin.SetMode(gin.ReleaseMode)
-
-[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (4 handlers)
-[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
-[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
-Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-[GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2022/03/04 - 17:10:34 | 400 |     457.154µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:10:34 | 400 |       98.53µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:10:35 | 400 |      96.252µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:12:17 | 200 |     121.101µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:12:27 | 400 |     170.425µs |       127.0.0.1 | POST     "/practise/post"
+[GIN] 2022/03/04 - 22:30:29 | 200 |     817.352µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:30:32 | 200 |     330.656µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:30:37 | 200 |     112.444µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:30:49 | 200 |     134.745µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:30:50 | 200 |     143.922µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:30:52 | 200 |     184.196µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:30:53 | 200 |     108.104µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:30:54 | 200 |     318.809µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:31:04 | 400 |     164.222µs |       127.0.0.1 | GET      "/practise/get"
+[GIN] 2022/03/04 - 22:31:07 | 400 |     243.738µs |       127.0.0.1 | GET      "/practise/get"
+[GIN] 2022/03/04 - 22:31:12 | 200 |     123.574µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 22:31:15 | 400 |     174.956µs |       127.0.0.1 | GET      "/practise/get"
+[GIN] 2022/03/04 - 22:31:31 | 200 |     205.924µs |       127.0.0.1 | GET      "/practise/cookie"
+[GIN] 2022/03/04 - 22:31:36 | 200 |     133.981µs |       127.0.0.1 | GET      "/practise/get"
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -56,14 +47,13 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
 [GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
 [GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] GET    /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2022/03/04 - 17:43:06 | 400 |     344.023µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:43:07 | 400 |      83.947µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:43:15 | 400 |     114.415µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:43:22 | 200 |     157.315µs |       127.0.0.1 | POST     "/practise/post"
-[GIN] 2022/03/04 - 17:43:38 | 200 |     107.107µs |       127.0.0.1 | GET      "/practise/get"
+[GIN] 2022/03/04 - 23:10:22 | 400 |     707.828µs |       127.0.0.1 | GET      "/practise/upload?file=%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png"
+[GIN] 2022/03/04 - 23:10:42 | 400 |     191.707µs |       127.0.0.1 | GET      "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -73,10 +63,151 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
 [GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
 [GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] GET    /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2022/03/04 - 17:44:35 | 400 |     250.191µs |       127.0.0.1 | GET      "/practise/get"
-[GIN] 2022/03/04 - 17:44:52 | 200 |      90.215µs |       127.0.0.1 | GET      "/practise/cookie"
-[GIN] 2022/03/04 - 17:44:59 | 200 |      89.563µs |       127.0.0.1 | GET      "/practise/cookie"
-[GIN] 2022/03/04 - 17:45:07 | 200 |     135.518µs |       127.0.0.1 | GET      "/practise/get"
+[GIN] 2022/03/04 - 23:12:00 | 400 |     709.591µs |       127.0.0.1 | GET      "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
+[GIN] 2022/03/04 - 23:12:02 | 400 |     179.641µs |       127.0.0.1 | GET      "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
+[GIN] 2022/03/04 - 23:12:04 | 400 |     187.477µs |       127.0.0.1 | GET      "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] POST   /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 23:16:03 | 404 |     424.088µs |       127.0.0.1 | GET      "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
+[GIN] 2022/03/04 - 23:16:05 | 404 |     164.148µs |       127.0.0.1 | GET      "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
+[GIN] 2022/03/04 - 23:16:06 | 404 |     137.874µs |       127.0.0.1 | GET      "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
+[GIN] 2022/03/04 - 23:16:49 | 400 |     345.847µs |       127.0.0.1 | POST     "/practise/upload?file=%22%2FUsers%2Fjimingyu%2FDesktop%2FWechatIMG40.png%22"
+[GIN] 2022/03/04 - 23:18:00 | 400 |     186.709µs |       127.0.0.1 | POST     "/practise/upload?file=WechatIMG40.png"
+[GIN] 2022/03/04 - 23:23:05 | 404 |     346.354µs |       127.0.0.1 | GET      "/practise/upload"
+[GIN] 2022/03/04 - 23:23:06 | 404 |      42.458µs |       127.0.0.1 | GET      "/favicon.ico"
+[GIN] 2022/03/04 - 23:23:38 | 400 |     134.776µs |       127.0.0.1 | POST     "/practise/upload?file=WechatIMG40.png"
+[GIN] 2022/03/04 - 23:23:40 | 400 |     133.289µs |       127.0.0.1 | POST     "/practise/upload?file=WechatIMG40.png"
+[GIN] 2022/03/04 - 23:28:04 | 400 |     342.677µs |       127.0.0.1 | POST     "/practise/upload?file=WechatIMG40.png"
+[GIN] 2022/03/04 - 23:29:09 | 400 |     191.599µs |       127.0.0.1 | POST     "/practise/upload?file=WechatIMG40.png"
+[GIN] 2022/03/04 - 23:29:11 | 400 |     152.823µs |       127.0.0.1 | POST     "/practise/upload?file=WechatIMG40.png"
+[GIN] 2022/03/04 - 23:30:13 | 400 |     157.788µs |       127.0.0.1 | POST     "/practise/upload?file=WechatIMG40.png"
+[GIN] 2022/03/04 - 23:32:19 | 400 |     273.711µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:33:21 | 400 |     278.581µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:33:50 | 200 |     114.579µs |       127.0.0.1 | GET      "/practise/async"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] POST   /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 23:37:42 | 400 |    2.583659ms |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:37:49 | 400 |     363.317µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] POST   /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 23:38:57 | 400 |    1.188245ms |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:39:54 | 500 |   10.850584ms |       127.0.0.1 | POST     "/practise/upload"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] POST   /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 23:40:25 | 400 |     525.698µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:41:01 | 404 |     173.886µs |       127.0.0.1 | GET      "/practise/upload"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] POST   /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 23:41:13 | 400 |         573µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:41:21 | 400 |     239.205µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:41:22 | 400 |      168.88µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:41:30 | 400 |      162.51µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:42:55 | 400 |     139.256µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:43:17 | 400 |     218.415µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:43:37 | 400 |     133.996µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:44:52 | 400 |      158.71µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] POST   /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 23:45:26 | 400 |       552.5µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:45:30 | 400 |     198.699µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:45:40 | 400 |     156.003µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:48:36 | 200 |    1.131441ms |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:49:50 | 200 |    1.602698ms |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:50:15 | 200 |     164.388µs |       127.0.0.1 | GET      "/practise/async"
+[GIN] 2022/03/04 - 23:50:32 | 200 |    1.321159ms |       127.0.0.1 | POST     "/practise/upload"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /practise/cookie          --> kube-learning/practise/gin-practise/gin-demo/response.CookiePractise (4 handlers)
+[GIN-debug] GET    /practise/get             --> kube-learning/practise/gin-practise/gin-demo/response.GetPractise (5 handlers)
+[GIN-debug] POST   /practise/post            --> kube-learning/practise/gin-practise/gin-demo/response.PostPractise (4 handlers)
+[GIN-debug] GET    /practise/async           --> kube-learning/practise/gin-practise/gin-demo/response.AsyncPractise (4 handlers)
+[GIN-debug] POST   /practise/upload          --> kube-learning/practise/gin-practise/gin-demo/response.UploadPractise (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/03/04 - 23:51:13 | 400 |    1.362544ms |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:51:15 | 400 |     251.477µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:51:28 | 400 |     181.077µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:56:31 | 400 |     968.781µs |       127.0.0.1 | POST     "/practise/upload"
+[GIN] 2022/03/04 - 23:58:57 | 200 |    1.457771ms |       127.0.0.1 | POST     "/practise/upload"
