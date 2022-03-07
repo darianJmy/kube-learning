@@ -117,6 +117,4 @@ Content-Type: multipart/form-data
 
 < /Users/jimingyu/Desktop/upload.html
 ###
-=======
-GET http://127.0.0.1:8000/login
->>>>>>> 650af4459e5f23e97f98cbccc8b3b14af224f6e9
+
