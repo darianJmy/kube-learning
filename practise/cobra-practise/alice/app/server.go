@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
+	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/klog/v2"
 	"kube-learning/practise/cobra-practise/alice/app/flag"
 	"kube-learning/practise/cobra-practise/alice/app/options"
 	"os"
+	"time"
 )
 
 const (
@@ -57,7 +59,18 @@ func NewAliceCommand() *cobra.Command {
 				klog.ErrorS(err, "Failed to validate alice flags")
 				os.Exit(1)
 			}
+			i := 0
+			stopCh := make(chan struct{})
+			go wait.Until(func() {
+				fmt.Printf("----%d---\n",i)
+				i++
+			},time.Second * 3, stopCh)
 
+			for {
+				time.Sleep(3 * time.Second)
+				fmt.Printf("ok")
+
+			}
 			return nil
 		},
 	}
