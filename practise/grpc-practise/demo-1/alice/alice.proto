@@ -1,0 +1,23 @@
+syntax = "proto3"; // 版本声明，使用Protocol Buffers v3版本
+
+option go_package = "kube-learning/practise/grpc-practise/demo-1/alice/alice";
+
+package alice; // 包名
+
+
+// 定义一个打招呼服务
+service Alice {
+    // SayHello 方法
+    rpc GetAlice (AliceRequest) returns (AliceReply) {}
+}
+
+// 包含人名的一个请求消息
+message AliceRequest {
+    int64  id   = 1;
+    string name = 2;
+}
+
+// 包含问候语的响应消息
+message AliceReply {
+    string message = 1;
+}

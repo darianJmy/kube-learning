@@ -1,42 +1,41 @@
-package demo_2
+package main
 
 import (
+	"errors"
 	"log"
-	"net"
+	"net/http"
 	"net/rpc"
 )
 
-const HelloServiceName = "path/to/pkg.HelloService"
-
-type HelloService struct {
-	HelloServiceInterface
-}
-type HelloServiceInterface interface {
-	Hello(request string, reply *string) error
+type Args struct {
+	A, B int
 }
 
-func (p HelloService) Hello(request string, reply *string) error {
-	*reply = "hello:" + request
+type Quotient struct {
+	Quo, Rem int
+}
+
+type Arith int
+
+func (t *Arith) Multiply(args *Args, reply *int) error {
+	*reply = args.A * args.B
 	return nil
 }
 
-func RegisterHelloService(svc HelloServiceInterface) error {
-	return rpc.RegisterName(HelloServiceName, svc)
+func (t *Arith) Divide(args *Args, quo *Quotient) error {
+	if args.B == 0 {
+		return errors.New("divide by 0")
+	}
+	quo.Quo = args.A / args.B
+	quo.Rem = args.A % args.B
+	return nil
 }
 
-
 func main() {
-	RegisterHelloService(new(HelloService))
-
-	listener, err := net.Listen("tcp", ":1234")
-	if err != nil {
-		log.Fatal("ListenTCP error:", err)
+	arith := new(Arith)
+	rpc.Register(arith)
+	rpc.HandleHTTP()
+	if err := http.ListenAndServe(":1234", nil); err != nil {
+		log.Fatal("serve error:", err)
 	}
-
-	conn, err := listener.Accept()
-	if err != nil {
-		log.Fatal("Accept error:", err)
-	}
-
-	rpc.ServeConn(conn)
 }
