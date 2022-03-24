@@ -7,13 +7,7 @@ import (
 	"time"
 )
 
-type Args struct {
-	A, B int
-}
 
-type Quotient struct {
-	Quo, Rem int
-}
 
 func main() {
 	client, err := rpc.DialHTTP("tcp", ":1234")
