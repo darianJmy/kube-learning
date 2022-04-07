@@ -1,14 +1,25 @@
-package gitlab
+package docker
 
 import (
-	"fmt"
 	"github.com/spf13/cobra"
 )
 
-func Gitlab() *cobra.Command {
+type InitDockerOptions struct {
+	Name       string   `json:"name"`
+	ValuesSets []string `json:"value"`
+}
+
+func NewInitDockerOptions() *InitDockerOptions {
+	return &InitDockerOptions{}
+}
+
+func Docker(initOptions *InitDockerOptions) *cobra.Command {
+	if initOptions == nil {
+		initOptions = NewInitDockerOptions()
+	}
 
 	cmd := &cobra.Command{
-		Use:   "gitlab",
+		Use:   "docker",
 		Short: "A brief description of your application",
 		Long: `A longer description that spans multiple lines and likely contains
 examples and usage of using your application. For example:
@@ -19,9 +30,18 @@ to quickly create a Cobra application.`,
 		// Uncomment the following line if your bare application
 		// has an action associated with it:
 		// Run: func(cmd *cobra.Command, args []string) { },
-		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("hello3")
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return run(initOptions)
 		},
 	}
 	return cmd
+}
+
+func run(initOptions *InitDockerOptions) error {
+	err := checkDocker()
+	return nil
+}
+
+func checkDocker() {
+
 }

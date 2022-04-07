@@ -17,20 +17,13 @@ package app
 
 import (
 	"github.com/spf13/cobra"
-	"io"
-	"os"
-
-	"kube-learning/practise/cobra-practise/cicd-practise/app/gitlab"
-	"kube-learning/practise/cobra-practise/cicd-practise/app/harbor"
+	"kube-learning/practise/cobra-practise/cicd-practise/app/docker"
+	"kube-learning/practise/cobra-practise/cicd-practise/app/helm"
 	"kube-learning/practise/cobra-practise/cicd-practise/app/jenkins"
 )
 
-const (
-	componentCicd = "Cicd"
-)
-
 // rootCmd represents the base command when called without any subcommands
-func Run(in io.Reader, out, err io.Writer) *cobra.Command {
+func Run() *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "cicd-practise",
@@ -41,16 +34,11 @@ examples and usage of using your application. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-		// Uncomment the following line if your bare application
-		// has an action associated with it:
-		Run: func(cmd *cobra.Command, args []string) {
-
-		},
 	}
 
-	cmd.AddCommand(harbor.Harbor(out, nil))
+	cmd.AddCommand(helm.Helm(nil))
 	cmd.AddCommand(jenkins.Jenkins())
-	cmd.AddCommand(gitlab.Gitlab())
+	cmd.AddCommand(docker.Docker(nil))
 
 	return cmd
 }
@@ -58,5 +46,5 @@ to quickly create a Cobra application.`,
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	cobra.CheckErr(Run(os.Stdin, os.Stdout, os.Stderr).Execute())
+	cobra.CheckErr(Run().Execute())
 }
