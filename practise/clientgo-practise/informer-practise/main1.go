@@ -53,7 +53,7 @@ func main() {
 
 func options(options ...string) {
 	for k, v := range options {
-		fmt.Printf("%d hello %v\n", k, v)
+		fmt.Printf("%d, %v\n", k, v)
 	}
 
 }
