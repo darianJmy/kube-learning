@@ -7,15 +7,14 @@ import (
 
 const (
 	afileLog = "access.log"
-	fileLog = "gin.log"
+	fileLog  = "gin.log"
 )
 
 var (
-	Info 	*log.Logger
+	Info    *log.Logger
 	Warning *log.Logger
-	Error 	*log.Logger
+	Error   *log.Logger
 )
-
 
 func init() {
 	file := fileLog

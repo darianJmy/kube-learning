@@ -24,7 +24,6 @@ func NewHttpServer(addr string) *options.Options {
 	return &o
 }
 
-
 func main() {
 	s := NewHttpServer(":8080")
 

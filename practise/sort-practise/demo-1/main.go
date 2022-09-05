@@ -19,7 +19,6 @@ func (a Animals) Swap(i, j int) {
 	a[i], a[j] = a[j], a[i]
 }
 
-
 func main() {
 	animals := []string{"cat", "bird", "zebra", "fox"}
 	sort.Strings(animals)

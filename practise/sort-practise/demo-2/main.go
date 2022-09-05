@@ -10,7 +10,6 @@ type User struct {
 	Age  int
 }
 
-
 type Users []User
 
 func (u Users) Len() int {
@@ -28,15 +27,15 @@ func (u Users) Swap(i, j int) {
 func main() {
 	a := User{
 		Name: "jixingxing",
-		Age: 18,
+		Age:  18,
 	}
 	b := User{
 		Name: "jimingyu",
-		Age: 17,
+		Age:  17,
 	}
 	c := User{
 		Name: "yangxiaoqian",
-		Age: 19,
+		Age:  19,
 	}
 	d := Users{a, b, c}
 	fmt.Println(d)

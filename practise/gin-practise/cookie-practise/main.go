@@ -28,16 +28,16 @@ func authmiddleware() gin.HandlerFunc {
 
 func login(c *gin.Context) {
 	cookie := &http.Cookie{
-		Name: "abc",
-		Value: "123",
-		Path: "/",
-		MaxAge: 60,
-		Secure: false,
+		Name:     "abc",
+		Value:    "123",
+		Path:     "/",
+		MaxAge:   60,
+		Secure:   false,
 		HttpOnly: true,
 	}
 	http.SetCookie(c.Writer, cookie)
 }
 
 func home(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"data":"home"})
+	c.JSON(http.StatusOK, gin.H{"data": "home"})
 }

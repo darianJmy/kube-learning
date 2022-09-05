@@ -7,11 +7,10 @@ import (
 	"net/http"
 )
 
-
 type User struct {
-	Age  	int 	`json:"age" form:"age" binding:"required,gt=10"`
-	Name 	string 	`json:"name" form:"name" binding:"NotNullAndAdmin"`
-	Address string  `json:"address" form:"address" binding:"required"`
+	Age     int    `json:"age" form:"age" binding:"required,gt=10"`
+	Name    string `json:"name" form:"name" binding:"NotNullAndAdmin"`
+	Address string `json:"address" form:"address" binding:"required"`
 }
 
 func main() {
@@ -39,5 +38,3 @@ func login(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, user)
 }
-
-

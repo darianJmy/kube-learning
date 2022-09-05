@@ -6,12 +6,10 @@ import (
 	"kube-learning/practise/gin-practise/gin-demo/response"
 )
 
-
 type Options struct {
 	Addr   string
 	Engine *gin.Engine
 }
-
 
 func (o *Options) RegisterHttpRoute() {
 	o.Engine.Use(middleware.LoggerToFile())

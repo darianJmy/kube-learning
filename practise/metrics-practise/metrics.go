@@ -115,7 +115,6 @@ func main() {
 	fmt.Println(selector)
 	fmt.Println(metricSelector)
 
-
 	metric, timestamp, err := metricsClient.GetRawMetric("http_requests", "default", selector, metricSelector)
 	if err != nil {
 		panic(err)

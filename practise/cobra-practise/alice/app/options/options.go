@@ -4,15 +4,13 @@ import (
 	"github.com/spf13/pflag"
 )
 
-
 type AliceFlags struct {
 	AliceConfigFile string
-	Help bool
+	Help            bool
 }
 
 func NewAliceFlags() *AliceFlags {
-	return &AliceFlags{
-	}
+	return &AliceFlags{}
 }
 
 func ValidateAliceFlags(f *AliceFlags) error {
@@ -20,7 +18,7 @@ func ValidateAliceFlags(f *AliceFlags) error {
 	return nil
 }
 
-func NewContainerRuntimeOptions()  {
+func NewContainerRuntimeOptions() {
 
 }
 

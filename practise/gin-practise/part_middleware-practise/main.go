@@ -26,7 +26,7 @@ func middleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		t := time.Now()
 		fmt.Println("中间件开始执行了")
-		c.Set("request","中间件")
+		c.Set("request", "中间件")
 		c.Next()
 
 		status := c.Writer.Status()

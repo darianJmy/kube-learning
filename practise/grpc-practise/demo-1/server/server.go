@@ -15,7 +15,7 @@ type server struct {
 }
 
 func (s *server) GetAlice(ctx context.Context, in *pb.AliceRequest) (*pb.AliceReply, error) {
-	return &pb.AliceReply{ Message: fmt.Sprintf("%s %d", in.GetName(), in.GetId())}, nil
+	return &pb.AliceReply{Message: fmt.Sprintf("%s %d", in.GetName(), in.GetId())}, nil
 }
 
 func main() {

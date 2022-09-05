@@ -8,7 +8,7 @@ import (
 
 type User struct {
 	Name string
-	Age int
+	Age  int
 	time time.Time
 }
 
@@ -19,17 +19,17 @@ func (u Users) Len() int {
 }
 
 func (u Users) Less(i, j int) bool {
-	return  u[i].time.Before(u[j].time)
+	return u[i].time.Before(u[j].time)
 }
 
-func (u Users) Swap(i, j int)  {
+func (u Users) Swap(i, j int) {
 	u[i], u[j] = u[j], u[i]
 }
 
 func main() {
 	a := User{
 		Name: "jixingxing",
-		Age: 18,
+		Age:  18,
 		time: time.Now(),
 	}
 
@@ -37,13 +37,13 @@ func main() {
 
 	b := User{
 		Name: "jimingyu",
-		Age: 18,
+		Age:  18,
 		time: time.Now(),
 	}
 
 	c := User{
 		Name: "yangxiaoqian",
-		Age: 20,
+		Age:  20,
 		time: time.Now(),
 	}
 

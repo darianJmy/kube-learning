@@ -6,9 +6,9 @@ import (
 )
 
 type User struct {
-	Name string `json:"name" xml:"name" yaml:"name" uri:"name"`
+	Name     string `json:"name" xml:"name" yaml:"name" uri:"name"`
 	Password string `json:"password" xml:"password" yaml:"password" uri:"password"`
-	Age int `json:"age" xml:"age" yaml:"age" uri:"age"`
+	Age      int    `json:"age" xml:"age" yaml:"age" uri:"age"`
 }
 
 //type Message struct {
@@ -33,9 +33,9 @@ func someJSON(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
 	c.JSON(http.StatusOK, gin.H{
-		"name": user.Name,
+		"name":     user.Name,
 		"password": user.Password,
-		"age": user.Age,
+		"age":      user.Age,
 	})
 }
 
@@ -68,10 +68,10 @@ func someYAML(c *gin.Context) {
 	if err := c.ShouldBindYAML(&user); err != nil {
 		c.YAML(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
-	c.YAML(http.StatusOK,gin.H{
-		"name": user.Name,
+	c.YAML(http.StatusOK, gin.H{
+		"name":     user.Name,
 		"password": user.Password,
-		"age": user.Age,
+		"age":      user.Age,
 	})
 
 }
@@ -81,10 +81,10 @@ func someURI(c *gin.Context) {
 	if err := c.ShouldBindUri(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
-	c.JSON(http.StatusOK,gin.H{
-		"name": user.Name,
+	c.JSON(http.StatusOK, gin.H{
+		"name":     user.Name,
 		"password": user.Password,
-		"age": user.Age,
+		"age":      user.Age,
 	})
 
 }

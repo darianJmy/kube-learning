@@ -13,7 +13,7 @@ func main() {
 		name := c.Param("name")
 		action := c.Param("action")
 		action = strings.Trim(action, "/")
-		c.String(http.StatusOK, name +" is "+ action)
+		c.String(http.StatusOK, name+" is "+action)
 	})
 	router.Run(":8081")
 }

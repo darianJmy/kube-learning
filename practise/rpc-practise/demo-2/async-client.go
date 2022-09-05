@@ -7,8 +7,6 @@ import (
 	"time"
 )
 
-
-
 func main() {
 	client, err := rpc.DialHTTP("tcp", ":1234")
 	if err != nil {
@@ -29,7 +27,7 @@ func main() {
 	var multiplyReplied, divideReplied bool
 	for !multiplyReplied || !divideReplied {
 		select {
-		case replyCall := <- multiplyReply.Done:
+		case replyCall := <-multiplyReply.Done:
 			if err := replyCall.Error; err != nil {
 				fmt.Println("Multiply error:", err)
 			} else {
@@ -43,7 +41,7 @@ func main() {
 				fmt.Printf("Divide: %d/%d=%d...%d\n", args2.A, args2.B, quo.Quo, quo.Rem)
 			}
 			divideReplied = true
-		case <- ticker.C:
+		case <-ticker.C:
 			fmt.Println("tick")
 		}
 	}

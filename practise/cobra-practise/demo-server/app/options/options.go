@@ -18,7 +18,7 @@ const (
 type User struct {
 	ID   string `json:"id"`
 	Name string `json:"name"`
-	Age string  `json:"age"`
+	Age  string `json:"age"`
 }
 
 type Options struct {
@@ -35,7 +35,7 @@ type Options struct {
 
 func NewOptions() (*Options, error) {
 	return &Options{
-		Master: "demo-master",
+		Master:          "demo-master",
 		ComponentConfig: config.NewComponentConfig(),
 	}, nil
 }
@@ -74,7 +74,7 @@ func (o *Options) Run() error {
 	return nil
 }
 
-func (o *Options) loginHandler (context *gin.Context) {
+func (o *Options) loginHandler(context *gin.Context) {
 	if context.Request.Method == "GET" {
 		// 调用context.HTML 渲染模板
 		// 状态码、模板名、参数( 用于渲染模板中的 {{}}, 这里我们没有使用模板语法, 所以传个 gin.H{} 即可 )

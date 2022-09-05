@@ -26,8 +26,8 @@ func NewAliceCommand() *cobra.Command {
 	aliceFlags := options.NewAliceFlags()
 
 	cmd := &cobra.Command{
-		Use: componentAlice,
-		Long: `alice test`,
+		Use:                componentAlice,
+		Long:               `alice test`,
 		DisableFlagParsing: true,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if err := cleanFlagSet.Parse(args); err != nil {
@@ -62,9 +62,9 @@ func NewAliceCommand() *cobra.Command {
 			i := 0
 			stopCh := make(chan struct{})
 			go wait.Until(func() {
-				fmt.Printf("----%d---\n",i)
+				fmt.Printf("----%d---\n", i)
 				i++
-			},time.Second * 3, stopCh)
+			}, time.Second*3, stopCh)
 
 			for {
 				time.Sleep(3 * time.Second)

@@ -18,7 +18,6 @@ func main() {
 		fmt.Printf("----%d----\n", i)
 
 		i++
-	}, time.Second * 10, stopCh)
-
+	}, time.Second*10, stopCh)
 
 }

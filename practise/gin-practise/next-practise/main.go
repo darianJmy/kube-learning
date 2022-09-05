@@ -10,7 +10,7 @@ import (
 func main() {
 	r := gin.Default()
 	r.Use(middleware())
-	r.GET("/request", func(c *gin.Context){
+	r.GET("/request", func(c *gin.Context) {
 		req, _ := c.Get("request")
 		fmt.Println("request", req)
 		c.JSON(http.StatusOK, gin.H{
@@ -19,7 +19,6 @@ func main() {
 	})
 	r.Run(":8080")
 }
-
 
 func middleware() gin.HandlerFunc {
 	return func(c *gin.Context) {

@@ -7,10 +7,10 @@ import (
 )
 
 type GinResp struct {
-	Code 	int 		`json:"code"`
-	Resp 	interface{} `json:"resp"`
-	Message string 		`json:"message"`
-	Error 	error    `json:"error"`
+	Code    int         `json:"code"`
+	Resp    interface{} `json:"resp"`
+	Message string      `json:"message"`
+	Error   error       `json:"error"`
 }
 
 func (g *GinResp) SetCode(c int) {
@@ -28,7 +28,6 @@ func (g *GinResp) SetMessage(m string) {
 func (g *GinResp) SetError(e error) {
 	g.Error = e
 }
-
 
 func GetPractise(c *gin.Context) {
 	r := GinResp{}
@@ -58,14 +57,13 @@ func PostPractise(c *gin.Context) {
 	c.JSON(200, r)
 }
 
-
 func CookiePractise(c *gin.Context) {
 	cookie := &http.Cookie{
-		Name: "abc",
-		Value: "123",
-		Path: "/",
-		MaxAge: 60,
-		Secure: false,
+		Name:     "abc",
+		Value:    "123",
+		Path:     "/",
+		MaxAge:   60,
+		Secure:   false,
 		HttpOnly: true,
 	}
 	http.SetCookie(c.Writer, cookie)
@@ -87,7 +85,7 @@ func AsyncPractise(c *gin.Context) {
 		r.SetMessage("Async Practise Message")
 
 		c.JSON(200, r)
-	} ()
+	}()
 }
 
 func UploadPractise(c *gin.Context) {
@@ -100,7 +98,7 @@ func UploadPractise(c *gin.Context) {
 		r.SetError(err)
 		c.JSON(400, r)
 		return
-	} else if file.Size > 1024 * 1024 * 2 {
+	} else if file.Size > 1024*1024*2 {
 		r.SetCode(400)
 		r.SetMessage("文件太大了")
 		r.SetError(err)
@@ -113,7 +111,7 @@ func UploadPractise(c *gin.Context) {
 		c.JSON(400, r)
 		return
 	}
-	c.SaveUploadedFile( file, file.Filename)
+	c.SaveUploadedFile(file, file.Filename)
 	r.SetCode(200)
 	r.SetMessage("上传完成")
 	r.SetError(err)

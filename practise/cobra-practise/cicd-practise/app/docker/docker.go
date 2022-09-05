@@ -18,22 +18,21 @@ const (
 )
 
 type InitDockerOptions struct {
-	Image      string `json:"image"`
-	Detach bool `json:"detach"`
-	Hostname string `json:"hostname"`
-	Publish []string `json:"publish"`
-	Name string `json:"name"`
-	Restart string `json:"restart"`
-	Volume []string `json:"volume"`
-	Shmsize string `json:"shmsize"`
+	Image    string   `json:"image"`
+	Detach   bool     `json:"detach"`
+	Hostname string   `json:"hostname"`
+	Publish  []string `json:"publish"`
+	Name     string   `json:"name"`
+	Restart  string   `json:"restart"`
+	Volume   []string `json:"volume"`
+	Shmsize  string   `json:"shmsize"`
 }
 
 type Config struct {
-	Config container.Config
-	HostConfig container.HostConfig
+	Config           container.Config
+	HostConfig       container.HostConfig
 	NetworkingConfig network.NetworkingConfig
-	Platform specs.Platform
-
+	Platform         specs.Platform
 }
 
 func NewInitDockerOptions() *InitDockerOptions {
@@ -70,7 +69,7 @@ to quickly create a Cobra application.`,
 func run(initOptions *InitDockerOptions) error {
 
 	cli, err := NewDockerClient()
-	if err != nil{
+	if err != nil {
 		return err
 	}
 
@@ -92,7 +91,6 @@ func run(initOptions *InitDockerOptions) error {
 	return nil
 }
 
-
 func NewDockerClient() (*client.Client, error) {
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
@@ -107,7 +105,7 @@ func checkInitDockerOptions(init *InitDockerOptions) (*Config, error) {
 	cfg.Config.Image = init.Image
 	cfg.Config.Hostname = init.Hostname
 	var Volume map[string]string
-	for k,_ := range init.Volume {
+	for k, _ := range init.Volume {
 		volumes := strings.Split(init.Volume[k], ":")
 		Volume[volumes[0]] = volumes[1]
 	}

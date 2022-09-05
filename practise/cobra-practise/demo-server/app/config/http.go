@@ -5,9 +5,8 @@ import (
 )
 
 type HttpConfig struct {
-	HttpPort     string `yaml:"httpport"`
-	HttpUrl 	 string `yaml:"httpurl"`
-
+	HttpPort string `yaml:"httpport"`
+	HttpUrl  string `yaml:"httpurl"`
 }
 
 func NewHttpOptions() *HttpConfig {

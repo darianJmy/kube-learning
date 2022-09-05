@@ -4,10 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/url"
-
 )
-
-
 
 func main() {
 

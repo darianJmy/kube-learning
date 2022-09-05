@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/kube-learning.iml" filepath="$PROJECT_DIR$/.idea/kube-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../thanos/.idea/thanos.iml" filepath="$PROJECT_DIR$/../thanos/.idea/thanos.iml" />
     </modules>
   </component>
 </project>

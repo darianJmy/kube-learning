@@ -17,7 +17,6 @@ var (
 	addr = "unix:///var/run/dockershim.sock"
 )
 
-
 func main() {
 
 	filter := &runtimeapi.ContainerFilter{}

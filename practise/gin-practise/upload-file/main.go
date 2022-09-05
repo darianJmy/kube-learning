@@ -16,7 +16,7 @@ func main() {
 	r.Run(":8080")
 }
 
-func upload(c *gin.Context){
+func upload(c *gin.Context) {
 	name := c.PostForm("name")
 	fmt.Println(name)
 	file, header, err := c.Request.FormFile("upload")
@@ -35,7 +35,7 @@ func upload(c *gin.Context){
 	if err != nil {
 		panic(err)
 	}
-	c.String(http.StatusOK,"update successful")
+	c.String(http.StatusOK, "update successful")
 }
 
 func get(c *gin.Context) {

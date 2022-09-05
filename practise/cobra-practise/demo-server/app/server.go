@@ -9,6 +9,7 @@ import (
 )
 
 var Source string
+
 func NewDemoCommand() *cobra.Command {
 	o, err := options.NewOptions()
 	if err != nil {

@@ -6,8 +6,6 @@ import (
 	"net/rpc"
 )
 
-
-
 func main() {
 	client, err := rpc.DialHTTP("tcp", ":1234")
 	if err != nil {
@@ -21,7 +19,6 @@ func main() {
 		log.Fatal("Divide error:", err)
 	}
 	fmt.Printf("Multiply: %d*%d=%d\n", args.A, args.B, reply)
-
 
 	args = &Args{15, 6}
 	var quo Quotient

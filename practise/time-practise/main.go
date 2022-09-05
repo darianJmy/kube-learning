@@ -1,10 +1,12 @@
 package main
+
 import (
 	"fmt"
 	"time"
 )
 
 var minAge = time.Duration(0)
+
 func main() {
 	t := time.Now()
 	s := t.Add(-minAge)

@@ -7,12 +7,12 @@ import (
 	"time"
 )
 
-
 type User struct {
-	Name string `json:"name" form:"name" binding:"required"`
-	Age  int `json:"age" form:"age" binding:"required,gt=10"`
+	Name     string    `json:"name" form:"name" binding:"required"`
+	Age      int       `json:"age" form:"age" binding:"required,gt=10"`
 	Birthday time.Time `json:"birthday" time_form:"2006-01-02" time_utc:"1"`
 }
+
 func main() {
 	r := gin.Default()
 	r.POST("/login", login)
